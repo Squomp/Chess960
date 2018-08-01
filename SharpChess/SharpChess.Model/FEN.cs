@@ -42,6 +42,26 @@ namespace SharpChess.Model
         #region Public Properties
 
         /// <summary>
+        ///   Gets GameStartPosition for Chess960
+        /// </summary>
+        public static string GameStartPosition960
+        {
+            get
+            {
+                //randomize order
+                string randomOrder = Utils.ShuffleString("rnbqkbnr");
+                string retVal = randomOrder;
+                //append middle
+                retVal += "/pppppppp/8/8/8/8/PPPPPPPP/";
+                //set other side same as first
+                retVal += randomOrder.ToUpper();
+                //append end
+                retVal += " w KQkq - 0 1";
+                return retVal;
+            }
+        }
+
+        /// <summary>
         ///   Gets GameStartPosition.
         /// </summary>
         public static string GameStartPosition

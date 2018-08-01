@@ -473,6 +473,11 @@ namespace SharpChess.Model
         /// </summary>
         public static bool UseRandomOpeningMoves { get; set; }
 
+        /// <summary>
+        ///   Gets or sets a bool indicating whther Chess960 mode was selected
+        /// </summary>
+        public static bool Is960 { get; set; }
+
         #endregion
 
         #region Public Methods
@@ -1055,7 +1060,14 @@ namespace SharpChess.Model
         {
             if (fenString == string.Empty)
             {
-                fenString = Fen.GameStartPosition;
+                if (!Is960)
+                {
+                    fenString = Fen.GameStartPosition;
+                }
+                else
+                {
+                    fenString = Fen.GameStartPosition960;
+                }
             }
 
             Fen.Validate(fenString);
