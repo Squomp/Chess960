@@ -9,7 +9,7 @@ namespace SharpChess.Model
     {
         private static Random r = new Random();
 
-        public static string ShuffleString(string s)
+        public static string Implement960(string s)
         {
             char[] array = s.ToCharArray();
             string retVal = "";

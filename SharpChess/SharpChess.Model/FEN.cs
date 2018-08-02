@@ -49,7 +49,7 @@ namespace SharpChess.Model
             get
             {
                 //randomize order
-                string randomOrder = Utils.ShuffleString("rnbqkbnr");
+                string randomOrder = Utils.Implement960("rnbqkbnr");
                 string retVal = randomOrder;
                 //append middle
                 retVal += "/pppppppp/8/8/8/8/PPPPPPPP/";
