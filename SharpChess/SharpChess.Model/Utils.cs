@@ -29,6 +29,7 @@ namespace SharpChess.Model
                 retVal = new string(array);
                 if ((retVal.IndexOf('b') % 2 != retVal.LastIndexOf('b') % 2) && (retVal.IndexOf('r') < retVal.IndexOf('k') && retVal.LastIndexOf('r') > retVal.IndexOf('k')))
                 {
+                    if (retVal != "rnbqkbnr")
                     valid960 = true;
                 }
             }
